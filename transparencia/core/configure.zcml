@@ -1,0 +1,72 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:monkey="http://namespaces.plone.org/monkey"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="transparencia.core">
+
+  <five:registerPackage package="." initialize=".initialize" />
+
+  <includeDependencies package="." />   
+
+  <include package=".content" />  
+  <include package="collective.monkeypatcher" />
+
+  <monkey:patch
+      description="Allows Collections to be orderable in wildcard.foldercontents view"
+      class="wildcard.foldercontents.views.NewFolderContentsView"
+      original="orderable"
+      replacement=".patches.orderable"
+      />
+
+  <monkey:patch
+      description="Allows Collections list only inner content in foldercontents, not criteria search"
+      class="wildcard.foldercontents.views.NewFolderContentsTable"
+      original="contentsMethod"
+      replacement=".patches.contentsMethod"
+      />
+
+  <!-- Grok the package to initialise schema interfaces and content classes -->
+    <grok:grok package="." />
+
+  <!-- -*- extra stuff goes here -*- -->
+
+  <genericsetup:registerProfile
+      name="default"
+      title="transparencia.core"
+      directory="profiles/default"
+      description="Installs the transparencia.core package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <!-- Custom Behaviours -->
+
+    <include package="plone.behavior" file="meta.zcml" />
+
+    <include package="plone.directives.form" file="meta.zcml" />
+    <include package="plone.directives.form" />    
+    
+    <grok:grok package=".behaviors" />
+
+    <plone:behavior
+        title="Noticia destacada"
+        description="Provide a boolean field for a new"
+        provides=".behaviors.INewDestacada"
+        for="plone.dexterity.interfaces.IDexterityContent"
+
+        />
+
+    <plone:behavior
+        title="Rich Description"
+        description="Provide a Rich Text field for a formatted description"
+        provides=".behaviors.IRichDescription"
+        for="plone.dexterity.interfaces.IDexterityContent"
+
+        />
+
+  <!-- <include package=".browser" /> -->
+    
+</configure>
