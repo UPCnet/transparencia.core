@@ -12,7 +12,6 @@
 
   <includeDependencies package="." />   
 
-  <include package=".content" />  
   <include package="collective.monkeypatcher" />
 
   <monkey:patch
