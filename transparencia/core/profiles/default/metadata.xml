@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 <metadata>
   <version>0001</version>
-    <dependencies>        
-        <dependency>profile-vilaix.core:default</dependency> 
-        <dependency>profile-vilaix.theme:default</dependency>               
+    <dependencies>
+        <dependency>profile-vilaix.core:default</dependency>
+        <dependency>profile-vilaix.theme:default</dependency>
+        <dependency>profile-transparencia.theme:default</dependency>
     </dependencies>
 </metadata>
