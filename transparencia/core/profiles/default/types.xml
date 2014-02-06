@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<object name="portal_types" meta_type="Plone Types Tool">
+  
+  <!-- New content types -->  
+  <object name="Llei" meta_type="Dexterity FTI" />
+  <object name="Categoria" meta_type="Dexterity FTI" />
+  <object name="Indicador" meta_type="Dexterity FTI" />
+
+</object>
