@@ -15,7 +15,7 @@ class ILlei(form.Schema):
     """Una llei
     """
 
-    descripcio_llei = RichText(
+    text_llei = RichText(
         title=_(u"Descripció llei"),
         description=_(u"Afegeix un text explicatiu de la llei"),
         required=True,
