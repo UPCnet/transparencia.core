@@ -49,7 +49,7 @@ class CategoriesVocabulary(object):
         terms = []
         for item in items:
             obj = item.getObject()
-            terms.append(SimpleVocabulary.createTerm(obj.id, str(obj.id), obj.identificador))
+            terms.append(SimpleVocabulary.createTerm(obj.identificador, str(obj.identificador), obj.identificador))
                         
         return SimpleVocabulary(terms)
 
@@ -124,7 +124,14 @@ class IIndicador(model.Schema):
     ) 
 
     valoracio_comprensio = schema.Int(
-        title=_(u"Comprenció / infografia"),
+        title=_(u"Comprensió / infografia"),
         description=_(u"Afegeix una valoració de 0 a 10"),
         required=True,
+    ) 
+
+    resultat_agregat = schema.Int(
+        title=_(u"Resultat Agregat"),
+        description=_(u"El resultat agregat 100%"),
+        required=False,
+        readonly=True,
     ) 
