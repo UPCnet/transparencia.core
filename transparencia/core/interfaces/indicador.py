@@ -22,6 +22,11 @@ from Products.CMFCore.utils import getToolByName
 from zope.i18nmessageid import MessageFactory
 _ = MessageFactory("transparencia")
 
+from plone.directives import form
+
+import datetime
+from plone.indexer import indexer
+
 
 # from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
@@ -71,13 +76,13 @@ class LleisVocabulary(object):
         for item in items:
             obj = item.getObject()
             terms.append(SimpleVocabulary.createTerm(obj.id, str(obj.id), obj.title_or_id()))
-                        
+        
         return SimpleVocabulary(terms)
 
 grok.global_utility(LleisVocabulary, name=u"vocabulary.Lleis")
 
 
-class IIndicador(model.Schema):
+class IIndicador(form.Schema):
     """Una llei
     """
 
@@ -106,7 +111,7 @@ class IIndicador(model.Schema):
         value_type=schema.Choice(title=u"Categories", 
                                  vocabulary=u"vocabulary.Categories",
                                  required=True)
-    )
+    )   
 
     keywords_llei = schema.List(
         title=u"Lleis", 
@@ -133,5 +138,34 @@ class IIndicador(model.Schema):
         title=_(u"Resultat Agregat"),
         description=_(u"El resultat agregat 100%"),
         required=False,
-        readonly=True,
     ) 
+
+    #Ocultar el camp
+    form.omitted('resultat_agregat')
+
+@indexer(IIndicador)
+def keywords_categories(context):
+    """Create a catalogue indexer, registered as an adapter, which can
+    populate the ``community_type`` value count it and index.
+    """    
+    return context.keywords_categories
+grok.global_adapter(keywords_categories, name='keywords_categories')
+
+@indexer(IIndicador)
+def keywords_llei(context):
+    """Create a catalogue indexer, registered as an adapter, which can
+    populate the ``community_type`` value count it and index.
+    """       
+    return context.keywords_llei
+grok.global_adapter(keywords_llei, name='keywords_llei')
+
+#Inicialitzar valors camps
+
+@form.default_value(field=IIndicador['start'])
+def startDefaultValue(data):
+    return datetime.datetime.today()
+
+
+@form.default_value(field=IIndicador['end'])
+def endDefaultValue(data):
+    return datetime.datetime.today()    

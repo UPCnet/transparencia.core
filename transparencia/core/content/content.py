@@ -26,3 +26,7 @@ class Categoria(Item):
 class Indicador(Container):
     implements(IIndicador)
 
+    # @property
+    # def resultat_agregat(self):
+    # 	return 0
+
