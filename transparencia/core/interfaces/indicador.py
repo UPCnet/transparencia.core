@@ -95,13 +95,13 @@ class IIndicador(form.Schema):
     start = schema.Datetime(
         title=_(u"Data Inici"),
         description=_(u"Afegeix la data inici de vigencia de l'indicador"),
-        required=True,
+        required=False,
     )
 
     end = schema.Datetime(
         title=_(u"Data Fi"),
         description=_(u"Afegeix la data fi de vigencia de l'indicador"),
-        required=True,
+        required=False,
     )
 
 
@@ -165,7 +165,14 @@ grok.global_adapter(keywords_llei, name='keywords_llei')
 def startDefaultValue(data):
     return datetime.datetime.today()
 
+@form.default_value(field=IIndicador['valoracio_publicat'])
+def valoracio_publicatDefaultValue(data):
+    return 0
 
-@form.default_value(field=IIndicador['end'])
-def endDefaultValue(data):
-    return datetime.datetime.today()    
+@form.default_value(field=IIndicador['valoracio_comprensio'])
+def valoracio_comprensioDefaultValue(data):
+    return 0
+
+# @form.default_value(field=IIndicador['end'])
+# def endDefaultValue(data):
+#     return datetime.datetime.today()    
