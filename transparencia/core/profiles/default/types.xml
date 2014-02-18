@@ -6,5 +6,6 @@
   <object name="Llei" meta_type="Dexterity FTI" />
   <object name="Categoria" meta_type="Dexterity FTI" />
   <object name="Indicador" meta_type="Dexterity FTI" />
+  <object name="Apartat" meta_type="Dexterity FTI" />
 
 </object>

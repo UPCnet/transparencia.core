@@ -5,6 +5,7 @@
 from transparencia.core.content.content import Llei
 from transparencia.core.content.content import Categoria
 from transparencia.core.content.content import Indicador
+from transparencia.core.content.content import Apartat
 
 # def initialize(context):
 #     """Initializer called when used as a Zope 2 product."""

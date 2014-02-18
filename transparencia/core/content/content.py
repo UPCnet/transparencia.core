@@ -16,6 +16,7 @@ from plone.app.collection.interfaces import ICollection
 from transparencia.core.interfaces import ILlei
 from transparencia.core.interfaces import ICategoria
 from transparencia.core.interfaces import IIndicador
+from transparencia.core.interfaces import IApartat
 
 class Llei(Item):
     implements(ILlei)
@@ -29,4 +30,7 @@ class Indicador(Container):
     # @property
     # def resultat_agregat(self):
     # 	return 0
+
+class Apartat(Item):
+    implements(IApartat)
 

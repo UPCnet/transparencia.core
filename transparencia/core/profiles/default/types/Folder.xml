@@ -12,7 +12,7 @@
  <property name="filter_content_types">True</property>
  <property name="allowed_content_types">
   <element value="Banner"/>
-  <element value="BannerContainer"/>
+  <element value="BannerContainer"/> 
   <element value="Carrousel"/>
   <element value="Collection"/>
   <element value="Document"/>
@@ -28,6 +28,7 @@
   <element value="Llei"/>
   <element value="Categoria"/>
   <element value="Indicador"/>
+  <element value="Apartat"/>
  </property>
  <property name="allow_discussion">False</property>
  <property name="default_view">folder_summary_view</property>
