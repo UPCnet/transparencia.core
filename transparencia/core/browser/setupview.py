@@ -42,6 +42,7 @@ else:
     HAS_DXCT = True
     from plone.dexterity.utils import createContentInContainer
 
+from Products.CMFPlone.interfaces.constrains import ISelectableConstrainTypes
 
 # from serveiesports.theme.portlets.queryportlet import Assignment as QueryPortletAssignment
 # from serveiesports.theme.portlets.utils import setupQueryPortlet, setPortletAssignment
@@ -205,6 +206,12 @@ class SetupView(grok.View):
             noticies.exclude_from_nav = True
             self.publish(noticies)
 
+            # Set on them the allowable content types
+            behavior = ISelectableConstrainTypes(noticies)
+            behavior.setConstrainTypesMode(1)
+            behavior.setLocallyAllowedTypes(('News Item', 'Collection'))
+            behavior.setImmediatelyAddableTypes(('News Item', 'Collection'))
+
             noticies_destacades = self.newCollection(noticies, 'noticies-destacades', u'Noticies Destacades', query = [{u'i': u'portal_type', u'o': u'plone.app.querystring.operation.selection.is', u'v': [u'News Item']},
                                                                                                                        {u'i': u'review_state', u'o': u'plone.app.querystring.operation.selection.is', u'v': u'published'},
                                                                                                                        {u'i': u'destacat', u'o': u'plone.app.querystring.operation.boolean.isTrue', u'v': u'Sí'}])
@@ -214,7 +221,7 @@ class SetupView(grok.View):
                                                                                       {u'i': u'review_state', u'o': u'plone.app.querystring.operation.selection.is', u'v': u'published'}])
             self.publish(noticies)          
                      
-        
+       
         #Menú Lateral       
         obj = portal_catalog.searchResults(portal_type = 'Folder',
                                             path = path + '/menu-lateral')
@@ -312,6 +319,11 @@ class SetupView(grok.View):
             self.publish(apartats)       
             apartats.reindexObject()
         
+        # Set on them the allowable content types
+        behavior = ISelectableConstrainTypes(apartats)
+        behavior.setConstrainTypesMode(1)
+        behavior.setLocallyAllowedTypes(('Apartat', 'Folder'))
+        behavior.setImmediatelyAddableTypes(('Apartat', 'Folder'))
    
         #Slider
         obj = portal_catalog.searchResults(portal_type = 'Folder',
@@ -325,6 +337,12 @@ class SetupView(grok.View):
             slider.exclude_from_nav = True
             self.publish(slider)       
             slider.reindexObject()
+
+        # Set on them the allowable content types
+        behavior = ISelectableConstrainTypes(slider)
+        behavior.setConstrainTypesMode(1)
+        behavior.setLocallyAllowedTypes(('Slider', 'Folder'))
+        behavior.setImmediatelyAddableTypes(('Slider', 'Folder'))
 
         # #Banners
         # obj = portal_catalog.searchResults(portal_type = 'Folder',
@@ -365,6 +383,11 @@ class SetupView(grok.View):
             self.publish(imatges_capcalera)       
             imatges_capcalera.reindexObject()           
       
+        # Set on them the allowable content types
+        behavior = ISelectableConstrainTypes(imatges_capcalera)
+        behavior.setConstrainTypesMode(1)
+        behavior.setLocallyAllowedTypes(('Image', 'Folder'))
+        behavior.setImmediatelyAddableTypes(('Image', 'Folder'))
 
         # #Banners dreta
         # obj = portal_catalog.searchResults(portal_type = 'BannerContainer',
@@ -429,6 +452,12 @@ class SetupView(grok.View):
             self.publish(categories)       
             categories.reindexObject()   
 
+        # Set on them the allowable content types
+        behavior = ISelectableConstrainTypes(categories)
+        behavior.setConstrainTypesMode(1)
+        behavior.setLocallyAllowedTypes(('Categoria', 'Folder'))
+        behavior.setImmediatelyAddableTypes(('Categoria', 'Folder'))
+
         #Lleis
         obj = portal_catalog.searchResults(portal_type = 'Folder',
                                            path = path + '/lleis')
@@ -438,6 +467,13 @@ class SetupView(grok.View):
             lleis.exclude_from_nav = True
             self.publish(lleis)       
             lleis.reindexObject()  
+        
+        # Set on them the allowable content types
+        behavior = ISelectableConstrainTypes(lleis)
+        behavior.setConstrainTypesMode(1)
+        behavior.setLocallyAllowedTypes(('Llei', 'Folder'))
+        behavior.setImmediatelyAddableTypes(('Llei', 'Folder'))
+
 
         #Indicadors
         obj = portal_catalog.searchResults(portal_type = 'Folder',
@@ -448,6 +484,13 @@ class SetupView(grok.View):
             indicadors.exclude_from_nav = True
             self.publish(indicadors)       
             indicadors.reindexObject()  
+        
+        # Set on them the allowable content types
+        behavior = ISelectableConstrainTypes(indicadors)
+        behavior.setConstrainTypesMode(1)
+        behavior.setLocallyAllowedTypes(('Indicador', 'Folder'))
+        behavior.setImmediatelyAddableTypes(('Indicador', 'Folder'))
+
 
         #Col·leccions Indicadors
         obj = portal_catalog.searchResults(portal_type = 'Folder',
@@ -458,58 +501,14 @@ class SetupView(grok.View):
             coleccions_indicadors.exclude_from_nav = True
             self.publish(coleccions_indicadors)       
             coleccions_indicadors.reindexObject()      
-
-        # # Add portlets programatically
-        # from vilaix.theme.portlets.noticiaDestacada import Assignment as noticiaDestacadaAssignment 
-        # from vilaix.theme.portlets.news import Assignment as noticiaAssignment 
-        # from vilaix.theme.portlets.bannersportlet import Assignment as bannersVilaixAssignment
-        # from vilaix.theme.portlets.agendaVilaix import Assignment as agendaVilaixAssignment
-        # from vilaix.theme.portlets.navigationfixed import Assignment as navigationfixedAssignment
-        # from plone.app.event.portlets.portlet_calendar import Assignment as calendarAssignment
         
+        # Set on them the allowable content types
+        behavior = ISelectableConstrainTypes(coleccions_indicadors)
+        behavior.setConstrainTypesMode(1)
+        behavior.setLocallyAllowedTypes(('Collection', 'Folder'))
+        behavior.setImmediatelyAddableTypes(('Collection', 'Folder'))
 
-        # target_manager = queryUtility(IPortletManager, name='genweb.portlets.HomePortletManager1', context=frontpage)
-        # target_manager_assignments = getMultiAdapter((frontpage, target_manager), IPortletAssignmentMapping)
-        # target_manager_assignments['navigationfixed'] = navigationfixedAssignment(root='/menu-lateral')
-        # target_manager_assignments['bannersVilaix'] = bannersVilaixAssignment(content='/material-multimedia/banners/banners_esquerra')     
-  
-
-        # target_manager = queryUtility(IPortletManager, name='genweb.portlets.HomePortletManager2', context=frontpage)
-        # target_manager_assignments = getMultiAdapter((frontpage, target_manager), IPortletAssignmentMapping)
-        # target_manager_assignments['noticiaDestacada'] = noticiaDestacadaAssignment()        
-  
-
-        # target_manager = queryUtility(IPortletManager, name='genweb.portlets.HomePortletManager3', context=frontpage)
-        # target_manager_assignments = getMultiAdapter((frontpage, target_manager), IPortletAssignmentMapping)
-        # target_manager_assignments['noticies'] = noticiaAssignment()
         
-        # target_manager = queryUtility(IPortletManager, name='genweb.portlets.HomePortletManager6', context=frontpage)
-        # target_manager_assignments = getMultiAdapter((frontpage, target_manager), IPortletAssignmentMapping)
-        # target_manager_assignments['bannersVilaix'] = bannersVilaixAssignment(content='/material-multimedia/banners/banners_dreta')
-        
-        # target_manager = queryUtility(IPortletManager, name='genweb.portlets.HomePortletManager7', context=frontpage)
-        # target_manager_assignments = getMultiAdapter((frontpage, target_manager), IPortletAssignmentMapping)
-        # target_manager_assignments['agendaVilaix'] = agendaVilaixAssignment() 
-
-        # target_manager = queryUtility(IPortletManager, name='genweb.portlets.HomePortletManager10', context=frontpage)
-        # target_manager_assignments = getMultiAdapter((frontpage, target_manager), IPortletAssignmentMapping)
-        # target_manager_assignments['calendari'] = calendarAssignment(state='published')
-
-        # portletManager = getUtility(IPortletManager, 'genweb.portlets.HomePortletManager3')
-        # spanstorage = getMultiAdapter((frontpage, portletManager), ISpanStorage)
-        # spanstorage.span = '8'
-
-        # portletManager = getUtility(IPortletManager, 'genweb.portlets.HomePortletManager6')
-        # spanstorage = getMultiAdapter((frontpage, portletManager), ISpanStorage)
-        # spanstorage.span = '4'
-
-        # portletManager = getUtility(IPortletManager, 'genweb.portlets.HomePortletManager7')
-        # spanstorage = getMultiAdapter((frontpage, portletManager), ISpanStorage)
-        # spanstorage.span = '8'
-
-        # portletManager = getUtility(IPortletManager, 'genweb.portlets.HomePortletManager10')
-        # spanstorage = getMultiAdapter((frontpage, portletManager), ISpanStorage)
-        # spanstorage.span = '4'    
-        
+              
                    
         return 'Created'
