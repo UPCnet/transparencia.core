@@ -1,0 +1,116 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Transparencia\n"
+"POT-Creation-Date: 2014-02-19 13:53+0000\n"
+"PO-Revision-Date: 2014-02-19 13:53+0000\n"
+"Last-Translator: Pilar Marinas <pilar.marinas@upcnet.es>\n"
+"Language-Team: Plone Team@UPCnet <plone.team@upcnet.es>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: transparencia\n"
+
+#: ./interfaces/categoria.py:20
+msgid "Afegeix l'identificador de la categoria"
+msgstr "Add the identifier of the category"
+
+#: ./interfaces/indicador.py:103
+msgid "Afegeix la data fi de vigencia de l'indicador"
+msgstr "Add the end date of validity of the indicator"
+
+#: ./interfaces/indicador.py:97
+msgid "Afegeix la data inici de vigencia de l'indicador"
+msgstr "Add the start date of validity of the indicator"
+
+#: ./interfaces/indicador.py:91
+msgid "Afegeix un text explicatiu de l'indicador"
+msgstr "Add explanatory text indicator"
+
+#: ./interfaces/llei.py:20
+msgid "Afegeix un text explicatiu de la llei"
+msgstr "Add explanatory text of the law"
+
+#: ./interfaces/indicador.py:127
+msgid "Afegeix una valoració de 0 a 10"
+msgstr "Add a rating of 0 to 10"
+
+#: ./interfaces/apartat.py:24
+msgid "Comença la url per http:// si vols enllaçar fora del teu espai."
+msgstr "Start to url by http:// if you want out of your space."
+
+#: ./interfaces/indicador.py:132
+msgid "Comprensió / infografia"
+msgstr "Understanding / graphics"
+
+#: ./interfaces/indicador.py:102
+msgid "Data Fi"
+msgstr "End date"
+
+#: ./interfaces/indicador.py:96
+msgid "Data Inici"
+msgstr "Start date"
+
+#: ./interfaces/indicador.py:90
+msgid "Descripció indicador"
+msgstr "Description indicator"
+
+#: ./interfaces/llei.py:19
+msgid "Descripció llei"
+msgstr "Description law"
+
+#: ./interfaces/indicador.py:139
+msgid "El resultat agregat 100%"
+msgstr "The aggregate result 100%"
+
+#: ./interfaces/llei.py:25
+msgid "Enllaç de la llei al BOE"
+msgstr "Link to law BOE"
+
+#: ./interfaces/apartat.py:17
+msgid "Icona"
+msgstr "Icon"
+
+#: ./interfaces/categoria.py:19
+msgid "Identificador"
+msgstr "ID"
+
+#: ./interfaces/llei.py:26
+msgid "Indiqueu l'enllàç de la llei al BOE."
+msgstr "Please link to the law BOE"
+
+#: ./interfaces/apartat.py:18
+msgid "Nom de la classe de font awesome a fer servir per icona (sense el prefix icon-)"
+msgstr "Name of class font awesome to use for icon (without the prefix icon-)"
+
+#: ./interfaces/apartat.py:29
+msgid "Obrir en una nova finestra?"
+msgstr "Open in new window?"
+
+#: ./interfaces/indicador.py:126
+msgid "Publicat"
+msgstr "Published"
+
+#: ./interfaces/indicador.py:138
+msgid "Resultat Agregat"
+msgstr "Aggregate results"
+
+#: ./interfaces/indicador.py:110
+msgid "Selecciona les categories a les que correspon aquest indicador"
+msgstr "Select the categories to the corresponding indicator"
+
+#: ./interfaces/indicador.py:118
+msgid "Selecciona les lleis a les que correspon aquest indicador"
+msgstr "Select the laws corresponding to this indicator"
+
+#: ./interfaces/apartat.py:30
+msgid "Seleccioneu per obrir l'enllaç en una finestra nova"
+msgstr "Select to open the link in a new window"
+
+#: ./interfaces/apartat.py:23
+msgid "URL de destí"
+msgstr "Destination URL"
+

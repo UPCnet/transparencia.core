@@ -31,6 +31,8 @@
   <!-- Grok the package to initialise schema interfaces and content classes -->
     <grok:grok package="." />
 
+    <i18n:registerTranslations directory="locales" />
+
   <!-- -*- extra stuff goes here -*- -->
 
   <genericsetup:registerProfile

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Products.CMFPlone.interfaces.siteroot import IPloneSiteRoot
 from plone.folder.interfaces import IExplicitOrdering
 from Acquisition import aq_inner

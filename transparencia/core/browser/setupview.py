@@ -118,56 +118,7 @@ class SetupView(grok.View):
     def newFolder(self, context, newid, title, type_name=u'Folder'):
         return self.createOrGetObject(context, newid, title, type_name)
 
-    def getRandomImage(self, w, h, topic=''):
-            data = requests.get('http://lorempixel.com/{0}/{1}/{2}'.format(w, h, topic)).content
-            image = NamedBlobImage(data=data,
-                                   filename=u'image.jpg',
-                                   contentType=u'image/jpeg')
-            return image
-
-    def createRandomNews(self, context, count):
-        print 'creating {0} News Items'.format(count)
-        for i in range(count):
-            obj = createContentInContainer(context, u'News Item', title=loremipsum.get_sentence(), image=self.getRandomImage(300, 200, u'sports'))
-            obj.text = RichTextValue(loremipsum.get_sentence())
-            obj.destacat = False                
-            self.publish(obj)
-            obj.reindexObject()
-
-    def createRandomEvents(self, context, count):
-        print 'creating {0} Events'.format(count)
-        for i in range(count):
-            obj = createContentInContainer(context, u'Event', title=loremipsum.get_sentence())
-            obj.description = loremipsum.get_paragraph()
-            self.publish(obj)
-            obj.reindexObject()
-
-    def createRandomBanners(self, context, count, w, h):
-        print 'creating {0} Banners'.format(count)
-        for i in range(count):
-            obj = createContentInContainer(context, u'BannerEsports', title=loremipsum.get_sentence(), picture=self.getRandomImage(w, h, u'sports'))
-            obj.description = loremipsum.get_paragraph()
-            obj.url = u'http://www.upc.edu'
-            self.publish(obj)
-            obj.reindexObject()
-
-    def createRandomDestacats(self, context, count, w, h, subject=[]):
-        print 'creating {0} Destacats'.format(count)
-        for i in range(count):
-            try:
-                title = loremipsum.get_sentence()
-                title = re.findall('((?:\w+\s+){3})', title)[0]
-            except:
-                pass
-            obj = createContentInContainer(context, u'Destacat', title=title, picture=self.getRandomImage(w, h, u'sports'))
-            obj.text = RichTextValue(loremipsum.get_sentence())
-            obj.url = u'http://www.upc.edu'
-            tag0 = choice(['esports colectius', 'esports d''adversari', 'esports individuals', 'sales d''activitats', 'aules d''aprenentatge'])
-            tag1 = choice(['futbol 11', 'futbol 7', 'futbol sala', 'basquet'])
-            obj.subject = (tag0, tag1)
-            self.publish(obj)
-            obj.reindexObject()
-
+   
     def publish(self, obj):
         workflow_tool = getToolByName(self.context, "portal_workflow")
         try:
@@ -316,7 +267,7 @@ class SetupView(grok.View):
             apartats = self.newFolder(material_multimedia, 'apartats', u'Apartats')
             apartats.language = pl.getDefaultLanguage()
             apartats.exclude_from_nav = True
-            self.publish(apartats)       
+            self.publish(apartats)
             apartats.reindexObject()
         
         # Set on them the allowable content types
@@ -466,7 +417,8 @@ class SetupView(grok.View):
             lleis.language = pl.getDefaultLanguage()
             lleis.exclude_from_nav = True
             self.publish(lleis)       
-            lleis.reindexObject()  
+            lleis.reindexObject()          
+  
         
         # Set on them the allowable content types
         behavior = ISelectableConstrainTypes(lleis)

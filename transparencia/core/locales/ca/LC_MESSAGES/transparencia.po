@@ -1,0 +1,116 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Transparencia\n"
+"POT-Creation-Date: 2014-02-19 13:53+0000\n"
+"PO-Revision-Date: 2014-02-19 13:53+0000\n"
+"Last-Translator: Pilar Marinas <pilar.marinas@upcnet.es>\n"
+"Language-Team: Plone Team@UPCnet <plone.team@upcnet.es>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: ca\n"
+"Language-Name: Catalan\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: transparencia\n"
+
+#: ./interfaces/categoria.py:20
+msgid "Afegeix l'identificador de la categoria"
+msgstr "Afegeix l'identificador de la categoria"
+
+#: ./interfaces/indicador.py:103
+msgid "Afegeix la data fi de vigencia de l'indicador"
+msgstr "Afegeix la data fi de vigència de l'indicador"
+
+#: ./interfaces/indicador.py:97
+msgid "Afegeix la data inici de vigencia de l'indicador"
+msgstr "Afegeix la data inici de vigència de l'indicador"
+
+#: ./interfaces/indicador.py:91
+msgid "Afegeix un text explicatiu de l'indicador"
+msgstr "Afegeix un text explicatiu de l'indicador"
+
+#: ./interfaces/llei.py:20
+msgid "Afegeix un text explicatiu de la llei"
+msgstr "Afegeix un text explicatiu de la llei"
+
+#: ./interfaces/indicador.py:127
+msgid "Afegeix una valoració de 0 a 10"
+msgstr "Afegeix una valoració de 0 a 10"
+
+#: ./interfaces/apartat.py:24
+msgid "Comença la url per http:// si vols enllaçar fora del teu espai."
+msgstr "Comença la url per http:// si vols enllaçar fora del teu espai."
+
+#: ./interfaces/indicador.py:132
+msgid "Comprensió / infografia"
+msgstr "Comprensió / infografia"
+
+#: ./interfaces/indicador.py:102
+msgid "Data Fi"
+msgstr "Data Fi"
+
+#: ./interfaces/indicador.py:96
+msgid "Data Inici"
+msgstr "Data Inici"
+
+#: ./interfaces/indicador.py:90
+msgid "Descripció indicador"
+msgstr "Descripció indicador"
+
+#: ./interfaces/llei.py:19
+msgid "Descripció llei"
+msgstr "Descripció llei"
+
+#: ./interfaces/indicador.py:139
+msgid "El resultat agregat 100%"
+msgstr "El resultat agregat 100%"
+
+#: ./interfaces/llei.py:25
+msgid "Enllaç de la llei al BOE"
+msgstr "Enllaç de la llei al BOE"
+
+#: ./interfaces/apartat.py:17
+msgid "Icona"
+msgstr "Icona"
+
+#: ./interfaces/categoria.py:19
+msgid "Identificador"
+msgstr "Identificador"
+
+#: ./interfaces/llei.py:26
+msgid "Indiqueu l'enllàç de la llei al BOE."
+msgstr "Indiqueu l'enllàç de la llei al BOE."
+
+#: ./interfaces/apartat.py:18
+msgid "Nom de la classe de font awesome a fer servir per icona (sense el prefix icon-)"
+msgstr "Nom de la classe de font awesome a fer servir per icona (sense el prefix icon-)"
+
+#: ./interfaces/apartat.py:29
+msgid "Obrir en una nova finestra?"
+msgstr "Obrir en una nova finestra?"
+
+#: ./interfaces/indicador.py:126
+msgid "Publicat"
+msgstr "Publicat"
+
+#: ./interfaces/indicador.py:138
+msgid "Resultat Agregat"
+msgstr "Resultat Agregat"
+
+#: ./interfaces/indicador.py:110
+msgid "Selecciona les categories a les que correspon aquest indicador"
+msgstr "Selecciona les categories a les que correspon aquest indicador"
+
+#: ./interfaces/indicador.py:118
+msgid "Selecciona les lleis a les que correspon aquest indicador"
+msgstr "Selecciona les lleis a les que correspon aquest indicador"
+
+#: ./interfaces/apartat.py:30
+msgid "Seleccioneu per obrir l'enllaç en una finestra nova"
+msgstr "Seleccioneu per obrir l'enllaç en una finestra nova"
+
+#: ./interfaces/apartat.py:23
+msgid "URL de destí"
+msgstr "URL de destí"
+
