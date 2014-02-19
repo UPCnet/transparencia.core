@@ -6,7 +6,7 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:monkey="http://namespaces.plone.org/monkey"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="transparencia.core">
+    i18n_domain="transparencia">
 
   <five:registerPackage package="." initialize=".initialize" />
 

@@ -23,8 +23,11 @@ from Products.CMFCore import utils
 # like _(u"message") will then be extracted by i18n tools for translation.
 
 
+# coreMessageFactory = MessageFactory('transparencia.core')
+# _ = MessageFactory("transparencia")
 
-coreMessageFactory = MessageFactory('transparencia.core')
+from zope.i18nmessageid import MessageFactory
+
 _ = MessageFactory("transparencia")
 
 def initialize(context):
