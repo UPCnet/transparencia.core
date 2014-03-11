@@ -10,6 +10,8 @@ from plone.namedfile.field import NamedImage
 from zope.i18nmessageid import MessageFactory
 _ = MessageFactory("transparencia")
 
+from Products.Archetypes.interfaces import IBaseObject
+from zope.annotation.interfaces import IAnnotations
 
 class ILlei(form.Schema):
     """Una llei
@@ -22,7 +24,7 @@ class ILlei(form.Schema):
     )
 
     enllac_BOE = schema.URI(
-        title=_(u"Enllaç de la llei al BOE"),
-        description=_(u"Indiqueu l'enllàç de la llei al BOE."),
+        title=_(u"Enllaç a document de referència"),
+        description=_(u"Indiqueu l'enllàç al document de referència."),
         required=True,
     )   
