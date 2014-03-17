@@ -75,7 +75,7 @@ class LleisVocabulary(object):
         terms = []
         for item in items:
             obj = item.getObject()
-            terms.append(SimpleVocabulary.createTerm(obj.title, str(obj.title), obj.title_or_id()))
+            terms.append(SimpleVocabulary.createTerm(obj.id, str(obj.id), obj.title_or_id()))
         
         return SimpleVocabulary(terms)
 
