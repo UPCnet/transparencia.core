@@ -10,11 +10,12 @@
 
   <five:registerPackage package="." initialize=".initialize" />
 
-  <includeDependencies package="." />   
+  <includeDependencies package="." />
 
-  <include package="collective.monkeypatcher" />
+<!-- Already in vilaix.core -->
+  <!-- <include package="collective.monkeypatcher" /> -->
 
-  <monkey:patch
+<!--   <monkey:patch
       description="Allows Collections to be orderable in wildcard.foldercontents view"
       class="wildcard.foldercontents.views.NewFolderContentsView"
       original="orderable"
@@ -26,14 +27,12 @@
       class="wildcard.foldercontents.views.NewFolderContentsTable"
       original="contentsMethod"
       replacement=".patches.contentsMethod"
-      />
+      /> -->
 
   <!-- Grok the package to initialise schema interfaces and content classes -->
     <grok:grok package="." />
 
     <i18n:registerTranslations directory="locales" />
-
-  <!-- -*- extra stuff goes here -*- -->
 
   <genericsetup:registerProfile
       name="default"
@@ -43,13 +42,14 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+<!-- Already in vilaix.core -->
   <!-- Custom Behaviours -->
 
-    <include package="plone.behavior" file="meta.zcml" />
+<!--     <include package="plone.behavior" file="meta.zcml" />
 
     <include package="plone.directives.form" file="meta.zcml" />
-    <include package="plone.directives.form" />    
-    
+    <include package="plone.directives.form" />
+
     <grok:grok package=".behaviors" />
 
     <plone:behavior
@@ -66,8 +66,8 @@
         provides=".behaviors.IRichDescription"
         for="plone.dexterity.interfaces.IDexterityContent"
 
-        />
+        /> -->
 
   <!-- <include package=".browser" /> -->
-    
+
 </configure>
