@@ -1,2 +1,0 @@
-transparencia.core
-==================
