@@ -8,7 +8,7 @@ HISTORY = open(os.path.join("docs", "HISTORY.rst")).read()
 
 setup(name='transparencia.core',
       version=version,
-      description="",
+      description="transparencia core package",
       long_description=README + "\n" + HISTORY,
       classifiers=[
           "Environment :: Web Environment",
