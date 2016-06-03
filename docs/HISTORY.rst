@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0b3 (unreleased)
+1.0b3 (2016-06-03)
 ------------------
 
 * Added FormFolder to Folder allowed types [sandra.saornil]
